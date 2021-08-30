@@ -49,12 +49,60 @@
 //   console.log('run');
 // }
 
-const run = (name: string, age?: number): string => {
-  return `${name}---${age}`
+// const run = (name: string, age?: number): string => {
+//   return `${name}---${age}`
+// }
+
+// const res: string = run('唐三', 12)
+
+// console.log(res);
+
+// const total = (a: number, b: number, ...args: number[]): number => {
+//   let sum = a + b
+//   args.forEach(item => {
+//     sum += item
+//   })
+//   return sum
+// }
+// console.log(total(1, 2, 3, 4, 5));
+
+
+// function getInfo(name: string): string
+// function getInfo(age: number): string
+// function getInfo(str: any): any{
+//   if (typeof str === 'string') {
+//     return `我叫${str}`
+//   } else {
+//     return `我的年龄是${str}`
+//   }
+// }
+
+// console.log(getInfo('唐三'));
+// console.log(getInfo(20));
+
+class Person {
+  name: string
+  constructor(name: string) {
+    this.name = name
+  }
+  getName(): string {
+    return this.name
+  }
+  setName(name: string): void {
+    this.name = name
+  }
 }
 
-const res: string = run('唐三', 12)
+const p = new Person('唐三')
+console.log(p.getName());
+p.setName('海神')
+console.log(p.getName());
 
-console.log(res);
-
+class Teacher extends Person {
+  constructor(name: string) {
+    super(name)
+  }
+}
+const t = new Teacher('孔子');
+console.log(t.getName());
 
